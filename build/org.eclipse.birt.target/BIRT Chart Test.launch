@@ -48,7 +48,7 @@
         <setEntry value="com.google.guava@default:default"/>
         <setEntry value="com.google.javascript@default:default"/>
         <setEntry value="com.google.protobuf@default:default"/>
-        <setEntry value="com.ibm.icu*70.1.0@default:default"/>
+        <setEntry value="com.ibm.icu*67.1.0@default:default"/>
         <setEntry value="com.jcraft.jsch@default:default"/>
         <setEntry value="com.sun.el@default:default"/>
         <setEntry value="com.sun.jna.platform@default:default"/>
@@ -721,7 +721,7 @@
         <setEntry value="org.w3c.dom.events@default:default"/>
         <setEntry value="org.w3c.dom.smil@default:default"/>
         <setEntry value="org.w3c.dom.svg@default:default"/>
-        <setEntry value="wrapped.com.ibm.icu.icu4j@default:default"/>
+        <setEntry value="wrapped.com.ibm.icu.icu4j*67.1.0@default:default"/>
         <setEntry value="wrapped.org.apache.xmlgraphics.fop@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">

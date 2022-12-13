@@ -13,12 +13,12 @@
 
 package org.eclipse.birt.report.session;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.eclipse.birt.report.IBirtConstants;
 import org.eclipse.birt.report.exception.ViewerException;
 import org.eclipse.birt.report.utility.ParameterAccessor;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Utility class to easily access ViewingSessionManager from HTTP requests.

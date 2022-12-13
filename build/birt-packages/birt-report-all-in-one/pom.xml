@@ -32,7 +32,14 @@
 			<layout>p2</layout>
 		</repository>
 	</repositories>
-
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>72.1</version>
+			<classifier/>
+		</dependency>
+	</dependencies>
 	<profiles>
 		<profile>
 			<id>build-server</id>

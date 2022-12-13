@@ -25,6 +25,15 @@
 	<groupId>org.eclipse.birt</groupId>
 	<artifactId>org.eclipse.birt.p2updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>72.1</version>
+			<classifier/>
+		</dependency>
+	</dependencies>
 
 	<!-- http://codeandme.blogspot.com/2012/12/tycho-build-5-building-p2-update-sites.html -->
     <build>

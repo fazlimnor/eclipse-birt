@@ -1,0 +1,1 @@
+java -DLIB_DIR=./target/lib -DMANIFEST_MF=./target/manifest.mf -DMANIFEST_TEMPLATE=./MANIFEST.MF.template CreateManifest
