@@ -16,14 +16,6 @@ package org.eclipse.birt.report.servlet;
 import java.io.IOException;
 import java.util.Iterator;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.axis.transport.http.AxisServlet;
 import org.eclipse.birt.core.exception.BirtException;
 import org.eclipse.birt.report.IBirtConstants;
 import org.eclipse.birt.report.context.IContext;
@@ -35,7 +27,15 @@ import org.eclipse.birt.report.session.IViewingSession;
 import org.eclipse.birt.report.session.ViewingSessionUtil;
 import org.eclipse.birt.report.utility.ParameterAccessor;
 
-abstract public class BirtSoapMessageDispatcherServlet extends AxisServlet {
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+abstract public class BirtSoapMessageDispatcherServlet extends HttpServlet {
 
 	/**
 	 * TODO: what's this?
@@ -98,8 +98,8 @@ abstract public class BirtSoapMessageDispatcherServlet extends AxisServlet {
 	}
 
 	/**
-	 * @see javax.servlet.http.HttpServlet#service(javax.servlet.ServletRequest,
-	 *      javax.servlet.ServletResponse)
+	 * @see jakarta.servlet.http.HttpServlet#service(jakarta.servlet.ServletRequest,
+	 *      jakarta.servlet.ServletResponse)
 	 */
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {

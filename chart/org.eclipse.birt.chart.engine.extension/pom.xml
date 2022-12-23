@@ -23,4 +23,14 @@
 	</parent>
 	<artifactId>org.eclipse.birt.chart.engine.extension</artifactId>
 	<packaging>eclipse-plugin</packaging>
+	
+	<dependencies>
+	  	<dependency>
+			<groupId>com.ibm.icu</groupId>
+			<artifactId>icu4j</artifactId>
+			<version>72.1</version>	
+			<scope>provided</scope>		
+		</dependency>
+	</dependencies>
+	
 </project>
