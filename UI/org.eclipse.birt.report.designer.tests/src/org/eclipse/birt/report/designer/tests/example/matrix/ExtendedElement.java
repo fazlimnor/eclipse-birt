@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.birt.report.model.api.DesignElementHandle;
-import org.eclipse.birt.report.model.api.extension.ExtendedElementException;
 import org.eclipse.birt.report.model.api.extension.IElementCommand;
 import org.eclipse.birt.report.model.api.extension.IPropertyDefinition;
 import org.eclipse.birt.report.model.api.extension.IReportItem;
@@ -229,7 +228,7 @@ public class ExtendedElement extends ReportItem {
 	 * String, java.io.ByteArrayInputStream)
 	 */
 	@Override
-	public void deserialize(String propName, ByteArrayInputStream data) throws ExtendedElementException {
+	public void deserialize(String propName, ByteArrayInputStream data) {
 		if (TEST3_PROP.equalsIgnoreCase(propName)) {
 			assert data != null;
 
@@ -326,7 +325,7 @@ public class ExtendedElement extends ReportItem {
 	 * String, java.lang.Object)
 	 */
 	@Override
-	public void checkProperty(String propName, Object value) throws ExtendedElementException {
+	public void checkProperty(String propName, Object value) {
 		CHECK_PROPERTY_TAG = propName;
 
 		if (LINE_STYLE_PROP.equalsIgnoreCase(propName)) {
@@ -342,7 +341,7 @@ public class ExtendedElement extends ReportItem {
 	 */
 	@Override
 	public void setProperty(String propName, Object value) {
-		execute(this.getElementCommand(propName, value));
+		execute();
 	}
 
 	public void doSetProperty(String propName, Object value) {
@@ -359,7 +358,7 @@ public class ExtendedElement extends ReportItem {
 				ByteArrayInputStream stream = new ByteArrayInputStream(value.toString().getBytes());
 				deserialize(propName, stream);
 				refreshNeeded = true;
-			} catch (ExtendedElementException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 				assert false;
 			}
@@ -411,7 +410,7 @@ public class ExtendedElement extends ReportItem {
 		return new ExtendedElementCommand(designHandle, this, propName, value);
 	}
 
-	private void execute(IElementCommand command) {
+	private void execute() {
 		// designHandle.getDesign( ).getActivityStack( ).execute( command );
 	}
 

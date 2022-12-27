@@ -290,7 +290,7 @@ public class DNDUtilTest extends BaseTestCase {
 		list.clear();
 		try {
 			listHandle.getDetail().add(getElementFactory().newDataItem("data"));
-		} catch (ContentException | NameException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -414,7 +414,7 @@ public class DNDUtilTest extends BaseTestCase {
 			assertTrue("validate rename", parameters.get(1).getName().equals("p2"));
 			assertTrue("validate rename", parameters.get(2).getName().equals("c1"));
 			assertTrue("validate rename", parameters.get(3).getName().equals("c2"));
-		} catch (ContentException | NameException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -537,7 +537,7 @@ public class DNDUtilTest extends BaseTestCase {
 
 		try {
 			listHandle.getHeader().add(getElementFactory().newLabel(""));
-		} catch (ContentException | NameException e1) {
+		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 		command = new DeleteCommand(listHandle.getHeader());
@@ -547,7 +547,7 @@ public class DNDUtilTest extends BaseTestCase {
 		try {
 			listHandle.addElement(lg, ListHandle.GROUP_SLOT);
 			lg.addElement(getElementFactory().newLabel("lg"), GroupHandle.HEADER_SLOT);
-		} catch (ContentException | NameException e1) {
+		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
 		command = new DeleteCommand(lg.getHeader());

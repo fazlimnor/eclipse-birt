@@ -17,7 +17,6 @@ package org.eclipse.birt.report.designer.core.commands;
 import java.io.UnsupportedEncodingException;
 
 import org.eclipse.birt.report.designer.core.model.views.outline.EmbeddedImageNode;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.core.IStructure;
 import org.eclipse.birt.report.model.api.elements.structures.EmbeddedImage;
 
@@ -34,7 +33,7 @@ public class PasteStructureCommandTest extends CmdBaseTestCase {
 	private EmbeddedImage embeddedImg = null;
 
 	@Override
-	protected void tearDown() throws SemanticException {
+	protected void tearDown() throws Exception {
 		super.tearDown();
 		embeddedImg = null;
 	}

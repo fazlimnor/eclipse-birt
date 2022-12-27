@@ -25,7 +25,6 @@ import org.eclipse.birt.report.model.api.RowHandle;
 import org.eclipse.birt.report.model.api.StyleHandle;
 import org.eclipse.birt.report.model.api.TableGroupHandle;
 import org.eclipse.birt.report.model.api.TableHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.core.StyleElement;
 import org.eclipse.birt.report.model.core.StyledElement;
 import org.eclipse.birt.report.model.elements.Style;
@@ -126,7 +125,7 @@ public class TableHandleAdapterTest extends BaseTestCase {
 
 		try {
 			styleHandle.setProperty(Style.BACKGROUND_COLOR_PROP, "0xff1234");
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			fail("error set background color");
 			e.printStackTrace();
 		}
@@ -151,7 +150,7 @@ public class TableHandleAdapterTest extends BaseTestCase {
 
 		try {
 			styleHandle.setProperty("color", "0xff1234");
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			fail("error set  color");
 			e.printStackTrace();
 		}

@@ -22,7 +22,7 @@
 		<relativePath>../../</relativePath>
 	</parent>
 	<artifactId>org.eclipse.birt.report.engine</artifactId>
-	<packaging>eclipse-plugin</packaging>
+	<packaging>eclipse-plugin</packaging>	
 	<build>
 		<plugins>
 			<!-- build engine-api.jar, see customerBuildCallbacks.xml -->
@@ -87,4 +87,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.birt</groupId>
+			<artifactId>org.eclipse.birt.core</artifactId>
+			<version>4.12.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 </project>

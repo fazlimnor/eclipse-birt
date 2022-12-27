@@ -41,7 +41,7 @@ import com.ibm.icu.text.MessageFormat;
  * bundle are immutable.
  *
  */
-public class BirtException extends Exception {
+public class BirtException extends java.lang.Exception {
 
 	/**
 	 *

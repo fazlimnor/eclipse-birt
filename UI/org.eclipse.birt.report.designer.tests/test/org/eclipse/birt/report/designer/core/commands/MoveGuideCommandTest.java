@@ -17,7 +17,6 @@ import org.eclipse.birt.report.designer.core.model.SessionHandleAdapter;
 import org.eclipse.birt.report.designer.testutil.BaseTestCase;
 import org.eclipse.birt.report.designer.util.MetricUtility;
 import org.eclipse.birt.report.model.api.MasterPageHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.elements.DesignChoiceConstants;
 import org.eclipse.birt.report.model.api.metadata.DimensionValue;
 import org.eclipse.birt.report.model.api.util.DimensionUtil;
@@ -52,7 +51,7 @@ public class MoveGuideCommandTest extends BaseTestCase {
 
 	}
 
-	public void testMoveGuildLeftMargin() throws SemanticException {
+	public void testMoveGuildLeftMargin() throws Exception {
 
 		int leftMargin = 200;
 		MasterPageHandle page = SessionHandleAdapter.getInstance().getMasterPageHandle();

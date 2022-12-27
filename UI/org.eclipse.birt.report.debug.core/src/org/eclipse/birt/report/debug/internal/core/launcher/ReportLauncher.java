@@ -56,8 +56,6 @@ import org.eclipse.birt.report.model.api.ParameterGroupHandle;
 import org.eclipse.birt.report.model.api.ParameterHandle;
 import org.eclipse.birt.report.model.api.ScalarParameterHandle;
 import org.eclipse.birt.report.model.api.elements.DesignChoiceConstants;
-import org.eclipse.birt.report.model.api.metadata.PropertyValueException;
-import org.eclipse.birt.report.model.api.metadata.ValidationValueException;
 import org.mozilla.javascript.Context;
 
 /**
@@ -200,7 +198,7 @@ public class ReportLauncher implements VMListener, IReportLaunchConstants {
 		map.put(temp, getParameterObject(temp, value));
 	}
 
-	private Date doValidateDateTimeByPattern(String value, String dataType) throws ValidationValueException {
+	private Date doValidateDateTimeByPattern(String value, String dataType) {
 		try {
 			long time = Long.parseLong(value);
 			return new Date(time);
@@ -213,13 +211,15 @@ public class ReportLauncher implements VMListener, IReportLaunchConstants {
 			if (obj instanceof Date) {
 				return (Date) obj;
 			}
-			throw new ValidationValueException(value, PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
-					DesignChoiceConstants.PARAM_TYPE_DATETIME);
+			return null;
+			// throw new ValidationValueException(value,
+			// PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
+			// DesignChoiceConstants.PARAM_TYPE_DATETIME);
 		}
 	}
 
 	private java.sql.Date doValidateSqlDateTimeByPattern(String value, String dataType)
-			throws ValidationValueException {
+	{
 		try {
 			long time = Long.parseLong(value);
 			return new java.sql.Date(time);
@@ -232,13 +232,16 @@ public class ReportLauncher implements VMListener, IReportLaunchConstants {
 			if (obj instanceof java.sql.Date) {
 				return (java.sql.Date) obj;
 			}
-			throw new ValidationValueException(value, PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
-					DesignChoiceConstants.PARAM_TYPE_DATETIME);
+
+			return null;
+			// throw new ValidationValueException(value,
+			// PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
+			// DesignChoiceConstants.PARAM_TYPE_DATETIME);
 		}
 	}
 
 	static private java.sql.Time doValidateTimeDateTimeByPattern(String value, String dataType)
-			throws ValidationValueException {
+	{
 		try {
 			long time = Long.parseLong(value);
 			return new java.sql.Time(time);
@@ -251,8 +254,10 @@ public class ReportLauncher implements VMListener, IReportLaunchConstants {
 			if (obj instanceof java.sql.Time) {
 				return (java.sql.Time) obj;
 			}
-			throw new ValidationValueException(value, PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
-					DesignChoiceConstants.PARAM_TYPE_DATETIME);
+			return null;
+			// throw new ValidationValueException(value,
+			// PropertyValueException.DESIGN_EXCEPTION_INVALID_VALUE,
+			// DesignChoiceConstants.PARAM_TYPE_DATETIME);
 		}
 	}
 
@@ -277,7 +282,7 @@ public class ReportLauncher implements VMListener, IReportLaunchConstants {
 				} else if (DesignChoiceConstants.PARAM_TYPE_DATETIME.equalsIgnoreCase(dataType)) {
 					return doValidateDateTimeByPattern(value, dataType);
 				}
-			} catch (ValidationValueException e) {
+			} catch (Exception e) {
 				return value;
 			}
 

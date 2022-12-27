@@ -23,6 +23,13 @@
 	</parent>
 	<artifactId>org.eclipse.birt.data</artifactId>
 	<packaging>eclipse-plugin</packaging>
+	<dependencies>
+		<dependency>
+	    <groupId>org.mozilla</groupId>
+	    <artifactId>javascript</artifactId>
+	    <version>1.7.10.v20190430-1943</version>
+	</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

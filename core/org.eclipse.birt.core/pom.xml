@@ -36,7 +36,7 @@
 			<artifactId>icu4j</artifactId>
 			<version>72.1</version>
 			<classifier/>
-		</dependency>
+		</dependency>		
 	</dependencies>
 	<build>
 		<plugins>

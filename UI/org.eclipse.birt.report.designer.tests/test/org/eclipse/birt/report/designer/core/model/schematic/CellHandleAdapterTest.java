@@ -19,8 +19,6 @@ import org.eclipse.birt.report.model.api.DesignEngine;
 import org.eclipse.birt.report.model.api.ReportDesignHandle;
 import org.eclipse.birt.report.model.api.SessionHandle;
 import org.eclipse.birt.report.model.api.TextItemHandle;
-import org.eclipse.birt.report.model.api.command.ContentException;
-import org.eclipse.birt.report.model.api.command.NameException;
 
 import com.ibm.icu.util.ULocale;
 
@@ -58,7 +56,7 @@ public class CellHandleAdapterTest extends TestCase {
 
 		try {
 			cell.getContent().add(text);
-		} catch (ContentException | NameException e) {
+		} catch (Exception e) {
 			fail("error when add text to tabel cell");
 			e.printStackTrace();
 		}

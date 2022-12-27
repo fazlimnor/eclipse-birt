@@ -35,7 +35,6 @@ import org.eclipse.birt.report.model.api.ModuleHandle;
 import org.eclipse.birt.report.model.api.PropertyHandle;
 import org.eclipse.birt.report.model.api.ReportDesignHandle;
 import org.eclipse.birt.report.model.api.SessionHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.olap.CubeHandle;
 import org.eclipse.birt.report.model.api.olap.DimensionHandle;
 import org.eclipse.birt.report.model.api.olap.HierarchyHandle;
@@ -296,7 +295,7 @@ abstract public class BaseTestCase extends TestCase {
 	 * @return
 	 */
 
-	protected CubeHandle prepareCube() throws SemanticException {
+	protected CubeHandle prepareCube() throws Exception {
 		ElementFactory factory = designHandle.getElementFactory();
 
 		// create cube
@@ -382,7 +381,7 @@ abstract public class BaseTestCase extends TestCase {
 			crosstabItem.insertMeasure(cubeHandle.getMeasure("QUANTITY_NUMBER"), -1);//$NON-NLS-1$
 			crosstabItem.insertMeasure(cubeHandle.getMeasure("QUANTITY_SIZE"), -1);//$NON-NLS-1$
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;

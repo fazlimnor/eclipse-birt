@@ -68,7 +68,7 @@ public class CrosstabSamples implements ICrosstabConstants {
 			crosstabItem.getMeasure(1).addAggregation(null, null, null, null);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -111,7 +111,7 @@ public class CrosstabSamples implements ICrosstabConstants {
 			crosstabItem.getMeasure(1).addAggregation(null, null, null, null);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -152,7 +152,7 @@ public class CrosstabSamples implements ICrosstabConstants {
 			mvh.addAggregation(null, null, null, null);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -196,7 +196,7 @@ public class CrosstabSamples implements ICrosstabConstants {
 			crosstabItem.getMeasure(1).addAggregation(null, null, null, null);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -238,7 +238,7 @@ public class CrosstabSamples implements ICrosstabConstants {
 			mvh.addAggregation(null, null, null, null);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

@@ -44,7 +44,6 @@ import org.eclipse.birt.report.model.api.ModuleHandle;
 import org.eclipse.birt.report.model.api.ReportDesignHandle;
 import org.eclipse.birt.report.model.api.SessionHandle;
 import org.eclipse.birt.report.model.api.StyleHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.command.ContentException;
 import org.eclipse.birt.report.model.api.command.NameException;
 import org.eclipse.birt.report.model.api.elements.DesignChoiceConstants;
@@ -332,7 +331,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 			syncAggregationCells(module, crosstabItem);
 
 			return crosstabItem;
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -340,7 +339,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 	}
 
 	private void syncAggregationCells(ModuleHandle module, CrosstabReportItemHandle crosstabItem)
-			throws SemanticException {
+			throws Exception {
 		for (int k = 0; k < crosstabItem.getMeasureCount(); k++) {
 			MeasureViewHandle mv = crosstabItem.getMeasure(k);
 			AggregationCellHandle handle = mv.addAggregation(null, null, null, null);
@@ -353,7 +352,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 		}
 	}
 
-	private void applyBorder(AbstractCrosstabItemHandle handle, String color) throws SemanticException {
+	private void applyBorder(AbstractCrosstabItemHandle handle, String color) throws Exception {
 		if (handle == null) {
 			return;
 		}
@@ -376,7 +375,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 		style.getBorderBottomColor().setStringValue(color);
 	}
 
-	private void applyBackground(AbstractCrosstabItemHandle handle, String color) throws SemanticException {
+	private void applyBackground(AbstractCrosstabItemHandle handle, String color) throws Exception {
 		if (handle == null) {
 			return;
 		}
@@ -386,7 +385,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 		style.getBackgroundColor().setStringValue(color);
 	}
 
-	private void applyTextAlign(AbstractCrosstabItemHandle handle, String align) throws SemanticException {
+	private void applyTextAlign(AbstractCrosstabItemHandle handle, String align) throws Exception {
 		if (handle == null) {
 			return;
 		}
@@ -396,7 +395,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 		style.setTextAlign(align);
 	}
 
-	private void applyVerticalAlign(AbstractCrosstabItemHandle handle, String align) throws SemanticException {
+	private void applyVerticalAlign(AbstractCrosstabItemHandle handle, String align) throws Exception {
 		if (handle == null) {
 			return;
 		}
@@ -406,7 +405,7 @@ public class TestEngine extends TestCase implements ICrosstabConstants {
 		style.setVerticalAlign(align);
 	}
 
-	private LabelHandle createLabelHandle(ModuleHandle module, String text) throws SemanticException {
+	private LabelHandle createLabelHandle(ModuleHandle module, String text) throws Exception {
 		LabelHandle label = module.getElementFactory().newLabel(null);
 		label.setText(text);
 		return label;

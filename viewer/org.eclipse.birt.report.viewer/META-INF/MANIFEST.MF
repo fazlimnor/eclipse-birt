@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.eclipse.birt.report.viewer; singleton:=true
 Bundle-Version: 4.12.0.qualifier
 Bundle-ClassPath: .,
  viewer.jar,
- birt/WEB-INF/lib/viewservlets.jar
+ ./birt/WEB-INF/lib/viewservlets.jar
 Bundle-Activator: org.eclipse.birt.report.viewer.ViewerPlugin
 Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin

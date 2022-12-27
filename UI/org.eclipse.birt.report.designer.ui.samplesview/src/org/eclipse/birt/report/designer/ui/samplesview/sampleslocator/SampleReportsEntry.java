@@ -22,7 +22,6 @@ import java.util.List;
 
 import org.eclipse.birt.report.designer.core.model.SessionHandleAdapter;
 import org.eclipse.birt.report.designer.internal.ui.resourcelocator.ResourceEntry;
-import org.eclipse.birt.report.model.api.DesignFileException;
 import org.eclipse.birt.report.model.api.ReportDesignHandle;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.swt.graphics.Image;
@@ -197,7 +196,7 @@ public class SampleReportsEntry implements ResourceEntry {
 				try {
 					this.sampleReport = SessionHandleAdapter.getInstance().getSessionHandle()
 							.openDesign(getURL().toString());
-				} catch (DesignFileException e) {
+				} catch (Exception e) {
 				}
 			}
 			return sampleReport;

@@ -106,4 +106,14 @@ public class Messages {
 			return '!' + key + '!';
 		}
 	}
+
+	/**
+	 *
+	 * @param key
+	 * @param arguments
+	 * @return the externalized message if found, otherwise null
+	 */
+	public static String getFormattedString(String key, Object[] arguments) {
+		return MessageFormat.format(getString(key), arguments);
+	}
 }

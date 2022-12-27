@@ -87,7 +87,7 @@ public class InsertInLayoutUtilTest extends BaseTestCase {
 		assertTrue("test list group", getListGroup() != null);
 	}
 
-	public void testPerformInsertDataSetColumn() throws SemanticException {
+	public void testPerformInsertDataSetColumn() {
 //		DataSetManager.setCurrentInstance( DataSetManager.newInstance( ) );
 //
 //		DataSetItemModel[] columnModels = DataSetManager.getCurrentInstance( )

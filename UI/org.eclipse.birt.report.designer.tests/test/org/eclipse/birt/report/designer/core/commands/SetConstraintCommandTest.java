@@ -19,7 +19,6 @@ import org.eclipse.birt.report.model.api.DataItemHandle;
 import org.eclipse.birt.report.model.api.DimensionHandle;
 import org.eclipse.birt.report.model.api.ImageHandle;
 import org.eclipse.birt.report.model.api.LabelHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.elements.DesignChoiceConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 
@@ -44,7 +43,7 @@ public class SetConstraintCommandTest extends CmdBaseTestCase {
 
 	}
 
-	public void testSetConstraintImageCmd() throws SemanticException {
+	public void testSetConstraintImageCmd() throws Exception {
 		ImageHandle newImage = getElementFactory().newImage("Test Image");
 		newImage.setWidth("150px");
 		newImage.setHeight("180px");

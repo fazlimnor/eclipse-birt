@@ -28,7 +28,6 @@ import org.eclipse.birt.report.model.api.ElementFactory;
 import org.eclipse.birt.report.model.api.RowHandle;
 import org.eclipse.birt.report.model.api.SlotHandle;
 import org.eclipse.birt.report.model.api.TableHandle;
-import org.eclipse.birt.report.model.api.activity.SemanticException;
 import org.eclipse.birt.report.model.api.command.ContentException;
 import org.eclipse.birt.report.model.api.command.NameException;
 
@@ -74,7 +73,7 @@ public abstract class CmdBaseTestCase extends BaseTestCase {
 	}
 
 	@Override
-	protected void tearDown() throws SemanticException {
+	protected void tearDown() throws Exception {
 		clearAll(getReportDesignHandle().getBody());
 		clearAll(getReportDesignHandle().getDataSources());
 		clearAll(getReportDesignHandle().getDataSets());
@@ -121,7 +120,7 @@ public abstract class CmdBaseTestCase extends BaseTestCase {
 		firstCell = getElementFactory().newCell();
 		try {
 			firstCell.setColumn(1);
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("setColumn 1");
@@ -139,7 +138,7 @@ public abstract class CmdBaseTestCase extends BaseTestCase {
 		secondCell = getElementFactory().newCell();
 		try {
 			secondCell.setColumn(2);
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("set Column 2");
@@ -202,7 +201,7 @@ public abstract class CmdBaseTestCase extends BaseTestCase {
 
 		try {
 			dataSet.setDataSource(DATA_SOURCE_NAME);
-		} catch (SemanticException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("add data source to dataset");
@@ -210,7 +209,7 @@ public abstract class CmdBaseTestCase extends BaseTestCase {
 
 	}
 
-	protected void clearAll(SlotHandle handle) throws SemanticException {
+	protected void clearAll(SlotHandle handle) throws Exception {
 		for (int i = 0; i < handle.getCount(); i++) {
 			handle.drop(0);
 		}

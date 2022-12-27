@@ -19,7 +19,6 @@ import org.eclipse.birt.report.designer.testutil.BaseTestCase;
 import org.eclipse.birt.report.model.api.DesignElementHandle;
 import org.eclipse.birt.report.model.api.elements.DesignChoiceConstants;
 import org.eclipse.birt.report.model.api.metadata.DimensionValue;
-import org.eclipse.birt.report.model.api.metadata.PropertyValueException;
 
 /**
  *
@@ -300,7 +299,7 @@ public class CSSUtilTest extends BaseTestCase {
 		String dimDesp = dim1.toString();
 		try {
 			target = CSSUtil.convertTo(dimDesp, null, dim3.getUnits());
-		} catch (PropertyValueException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		assertEquals(target, dim3);
